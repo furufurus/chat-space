@@ -1,0 +1,16 @@
+.side-bar
+  .header
+    %h1.header__name
+      %ul.header__lists
+        %li.header__list__item
+          = link_to "#" do
+            = icon('fas', 'edit', class: 'icon')
+        %li.header__list__edit
+          = link_to "#" do
+            = icon('fas', 'cog',class: "icon")
+  .groups
+    .group
+      %p.group__name
+        techchamp
+      %p.group__latest-message
+        まだメッセージはありません
