@@ -1,20 +1,8 @@
-# Rails.application.routes.draw do
-  devise_for :users
-#   # get 'messages/index'
-#   root "groups#index"
-#   # root "messages#index"
-# end
 Rails.application.routes.draw do
-
   devise_for :users
-  # devise_for :users
-  root "messages#index"
-  # resources :users, only: [:index, :edit, :update]
-  # resources :groups, only: [:index, :new, :create, :edit, :update] do
-    # resources :messages, only: [:index, :create]
-    # namespace :api do
-    #   resources :messages, only: :index, defaults: { format: 'json'}
-    # end
-  end
+  # 下の行は削除する
+  # get 'messages/index
 
-# end
+  root "messages#index"
+  resources :users, only: [:edit, :update]
+end
