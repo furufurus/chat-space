@@ -6,7 +6,7 @@
       .chat-main__group-info__left-box__members
         Member：
         - @group.users.each do |user|
-          %li.chat-main__group-info__left-box__members__name
+          %li.chat-main__group-info__left-box__name
           = user.name
     .chat-main__group-info__edit
       = link_to edit_group_path(@group), class: "chat-main__group-info__edit__btn" do

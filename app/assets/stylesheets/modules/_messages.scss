@@ -43,9 +43,11 @@
         &__name {
           font-size: 15px;
           margin-bottom: 5px;
+          color: #fff;
         }
         &__latest-message {
           font-size: 11px;
+          color: #fff;
         }
       }
     }
@@ -70,6 +72,12 @@
           color: $color6;
           font-size: 12px;
           margin-top: 15px;
+          display: flex;
+          list-style: none;
+        }
+        &__name {
+          display: inline-block;
+          padding-right: 5px;
         }
       }
       &__edit {
@@ -80,7 +88,7 @@
         line-height: 40px;
         margin-top: 28px;
         padding: 0 20px;
-        .btn {
+        &__btn {
           color: $color7;
           text-decoration: none;
         }
@@ -88,56 +96,61 @@
     }
       .messages {
         background-color: $color5;
-        height: calc(100vh - 100px - 90px);
-        padding: 35px 40px 0;
-          .message__info {
+        height: calc(100vh - 190px);
+        padding-top: 35px;
+        overflow: scroll;
+        .message {
+          padding: 0 0 46px 40px;
+          &__info {
             margin-bottom: 12px;
             display: flex;
-            flex-direction: row;
-            &__talk {
+            &__user {
               font-size: 16px;
+              color: $color8;
+              margin-right: 5px;
             }
             &__date {
               font-size: 12px;
               color: $color6;
             }
             &__text {
-              margin-bottom: 46px;
               font-size: 14px;
               color: $color8; 
-            }
+             }
           }
       }
+      }
       .form {
-        background-color: $color9;
+        background-color: #DDDDDD;
+        box-sizing: border-box;
         height: 90px;
-        padding: 20px 40px;
+        padding: 20px 50px 20px 40px;
         .input-box {
-          width: 100%;
-          height: 50px;
-          display: flex;
-          position: relative; 
           &__text {
+            border: none;
+            box-sizing: border-box;
+            float: left;
             height: 50px;
-            width: 100%;
-            padding: 0 40px 0 10px;
-            border-style: none;
+            padding: 0 10px;
+            width: calc(100% - 150px);
           }
           &__image {
-            position: absolute;
-            font-size: 1.3rem;
-            top: 10px;
+            background-color: #fff;
+            float: left;
+            height: 50px;
+            padding-right: 10px;
             right: 125px;
-            cursor: pointer;
-            box-sizing: border-box;
+            font-size: 20px;
+            line-height: 50px;
             &__file {
               display: none;
             }
           } 
         }
-        .submit-btn {
-          background-color: $color7;
-          color: $color1;
+        .form__submit {
+          background-color: #38AEF0;
+          border: none;
+          color: #fff;
           float: right;
           font-size: 16px;
           height: 50px;
