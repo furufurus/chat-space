@@ -76,3 +76,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
+group :test, :development do 
+  gem 'capybara'
+end
