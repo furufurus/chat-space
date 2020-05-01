@@ -56,17 +56,17 @@ $(function(){
     var html = buildHTML(data);
     $('.messages').append(html);
     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});  
-    $('#new_message')[0].reset();     
+    $('form')[0].reset();     
   })
   .fail(function(){
     alert("メッセージ送信に失敗しました");
   })
   .always(function(){
-    $('.message__text__image').prop('disabled', false);
+    $('.form__submit').prop('disabled', false);
   })
   })
   var reloadMessages = function() {
-    var last_message_id = $('.message:last').data(".message-id");
+    var last_message_id = $('.message:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'GET',
@@ -77,8 +77,8 @@ $(function(){
       if (messages.length !== 0) {
         var insertHTML = '';
         $.each(messages, function(i, message) {
-          insertHTML = insertHTML + buildHTML(message);
-        })
+          insertHTML += buildHTML(message)
+        });
         $('.messages').append(insertHTML);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       }
